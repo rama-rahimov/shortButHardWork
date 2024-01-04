@@ -68,13 +68,35 @@ table, td, th {
 }
 
 .firstPLeftSide {
+  cursor:pointer; 
+  font-size:16px; 
+  color:#fff; 
+  margin-right:5px;
+}
+
+.mineDiv {
+  width:52%; 
+  position: absolute; 
+  right:100px;
+}
+
+.secondPLeftSide {
   cursor: pointer ; 
   font-size: 16px ; 
-  color: #fff
+  color: #b0b0b0 ;
 }
 
 .head_and_0 {
   display: flex;
   align-items: center;
 }
+
+.span{
+  color:#fff; 
+  font-size:18px ; 
+  font-weight:bold;
+  cursor:pointer; 
+  margin-right:5px;
+}
+
 

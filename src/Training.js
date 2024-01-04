@@ -8,7 +8,6 @@ const [childrenArr, setChildrenArr] = useState([]);
 const [dokontsa, setDokontsa] = useState([]);
 
 const scrollToSection = (elementRef) => {
-console.log(elementRef, "khbkjb");
 window.scrollTo({
 top: elementRef ,
 behavior: 'smooth'
@@ -17,19 +16,15 @@ behavior: 'smooth'
 
 const vperedFilter = (key) => {
 if(dokontsa.length > 0 && dokontsa[0].key === key) {
-    setDokontsa([]);
-    return
+setDokontsa([]);
+return
 }
-console.log(key);
 const tadam = childrenArr.filter((el) => el.key === key);
-console.log("tadam", tadam);
 setDokontsa(tadam);
 }
 
 useEffect(() => {
-console.log(ref);
-const takee = ref.current.children[1].childNodes;
-console.log(typeof takee === "object");         
+const takee = ref.current.children[1].childNodes;      
 if(!arr[0]){
 for (let iterator of takee) {  
 if(iterator.id.includes("children")) {
@@ -42,8 +37,6 @@ arr.push({ value: iterator.innerText, offsetTop: iterator.offsetTop, key: headKe
 setArr(arr);
 }
 } 
-console.log(arr);          
-console.log(childrenArr);  
 }  
 setArr2("Hello");                           
 }, [arr2]);
@@ -58,16 +51,16 @@ return (
 return(
 <div style={{paddingTop:"5px"}} key={index}>
 <div className='head_and_0'>
-<p onClick={() => scrollToSection(el.offsetTop)} style={{ cursor:"pointer", fontSize:"16px", color:"#fff", marginRight:"5px"}}>
+<p onClick={() => scrollToSection(el.offsetTop)} className='firstPLeftSide'>
 {el.value} 
 </p>
-{el.key > 0 ? <span onClick={() => vperedFilter(el.key)} style={{color:"#fff", fontSize:"18px", fontWeight:"bold", cursor:"pointer" , marginRight:"5px"}}>+</span> : null} 
+{el.key > 0 ? <span onClick={() => vperedFilter(el.key)} className='span'>+</span> : null} 
 </div>
 {
 dokontsa.length > 0 && dokontsa[0].key === el.key && dokontsa.map((el, index) => {
 return (
 <div key={index}>
-<p style={{ cursor:"pointer", fontSize:"16px", color:"#b0b0b0"}} onClick={() => scrollToSection(el.offsetTop)}>{el.value}</p>
+<p className='secondPLeftSide' onClick={() => scrollToSection(el.offsetTop)}>{el.value}</p>
 </div>
 )
 })
@@ -80,7 +73,7 @@ return (
 </div>
 </div>
 </div>
-<div style={{width:"52%", position: "absolute", right:"100px"}}> 
+<div className='mineDiv'> 
 <h2 defaultValue="What types of Phone repair are offered?"  id='head_0_1'>What types of Phone repair are offered?</h2>
 <p>The partner repair stores of Simply Fixable offer the following repair services: cracked phone screen repair, phone battery replacement, charging port, front and back camera, headphone jack, loudspeaker, home/power button, back glass, and water damage repair.</p>
 
