@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.leftSide {
+  width: 30%;
+}
+
+.rightSide {
+  width: 70%;
+}
+
+
+thead, tbody, tfoot, tr, td, th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+
+table tr:first-child {
+  background: #0f3a60;
+  color: #fff;
+}
+
+table, td, th {
+  border: 1px solid;
+  border-spacing: inherit;
+}
+
+.leftSideSimple {
+  display:flex; 
+  width:100%; 
+  font-family:sans-serif; 
+  color: darkslategray;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.slider_header {
+  height: 100%;
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 262px;
+  height: 67%;
+  background: linear-gradient(-45deg, #571845, #c70039);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 5px 0 20px;
+  transform: translateY(3em);
+}
+
+.scrollbox {
+  overflow: auto;
+}
