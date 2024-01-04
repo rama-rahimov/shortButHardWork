@@ -7,9 +7,9 @@ const [arr2, setArr2] = useState("");
 const [childrenArr, setChildrenArr] = useState([]);
 const [dokontsa, setDokontsa] = useState([]);
 
-const scrollToSection = (elementRef) => {
+const scrollToSection = (topId) => {
 window.scrollTo({
-top: elementRef ,
+top: topId ,
 behavior: 'smooth'
 })
 }
@@ -31,8 +31,8 @@ if(iterator.id.includes("children")) {
 let childrenKey = iterator.id.split("_")[1];
 childrenArr.push({ value: iterator.innerText, offsetTop: iterator.offsetTop, key: childrenKey });
 setChildrenArr(childrenArr);
-} else if(iterator.id.includes("head_0")){ 
-let headKey = iterator.id.split("_")[2];
+} else if(iterator.id.includes("head")){ 
+let headKey = iterator.id.split("_")[1];
 arr.push({ value: iterator.innerText, offsetTop: iterator.offsetTop, key: headKey || 0});
 setArr(arr);
 }
@@ -41,7 +41,7 @@ setArr(arr);
 setArr2("Hello");                           
 }, [arr2]);
 return (
-<div ref={ref} id='hmmm' className='leftSideSimple'>
+<div ref={ref} className='all'>
 <div className='slider_header'>
 <div className='slider'>
  <div className='scrollbox'>
@@ -74,7 +74,7 @@ return (
 </div>
 </div>
 <div className='mineDiv'> 
-<h2 defaultValue="What types of Phone repair are offered?"  id='head_0_1'>What types of Phone repair are offered?</h2>
+<h2 id='head_1'>What types of Phone repair are offered?</h2>
 <p>The partner repair stores of Simply Fixable offer the following repair services: cracked phone screen repair, phone battery replacement, charging port, front and back camera, headphone jack, loudspeaker, home/power button, back glass, and water damage repair.</p>
 
 <h3 id='children_1'>Phone screen replacement</h3>
@@ -113,7 +113,7 @@ return (
 <h4>How to prevent phone charging port damage?</h4>
 <p>Regular maintenance, like cleaning the charging port from dirt or debris and avoiding putting the phone in hot temperatures, can save it from any potential damage.</p> 
 
-<h2 id='head_0_2'>Common Phone Problems That Could Be Fixed With Us </h2>
+<h2 id='head_2'>Common Phone Problems That Could Be Fixed With Us </h2>
 <p>Here are some of the common phone problems that users face:</p>
 
 <h3 id='children_2'>Broken Phone screen</h3>
@@ -176,10 +176,10 @@ return (
 <h4>How to prevent phone from freezing?</h4>
 <p>A hard reset should resolve the frozen phone screen issue.</p>
 
-<h2 id='head_0'>Who is Simply Fixable?</h2>
+<h2 id='head'>Who is Simply Fixable?</h2>
 <p>Simply Fixable is a platform that connects customers with local repair shops that have been vetted and approved by Simply Fixable. Our mission is to make it easy and affordable for people to get their mobile devices repaired. Our selection ensures  everyone has access to high-quality and affordable device repair services across the USA.</p>
 
-<h4 id='head_0'>How much does it cost to repair a Phone?</h4>
+<h4 id='head'>How much does it cost to repair a Phone?</h4>
 <p>The cell phone repair cost depends on factors such as brand, model, and the type of damage. Below is a breakdown of the average phone screen repair cost, battery replacement cost, and charging port repair cost of the iPhone. We’ll also discuss the same for Samsung phone repair.</p>
 <table>
     <colgroup>
@@ -213,14 +213,14 @@ return (
 
 <p><strong>Table 1. iPhone and Samsung repair costs</strong></p>
 
-<h2 id='head_0'>How long does it take to repair a Phone?</h2>
+<h2 id='head'>How long does it take to repair a Phone?</h2>
 <p>The time duration of mobile phone repair largely depends on the nature of the damage and the availability of tools and parts. Physical damage, such as screen replacement, takes 45 minutes, battery replacement takes about 60 minutes or less, and charging port repair takes 1 hour and 45 minutes.</p> 
 
 <p>Damages that are not clearly visible, such as water damage or software issues, can take anywhere from a few hours to several days.</p>
 
 <p>On average, at Simply Fixable’s partner stores, repairs take about 45 minutes or less.</p> 
 
-<h2 id='head_0'>Is it worth repairing a Phone?</h2>
+<h2 id='head'>Is it worth repairing a Phone?</h2>
 <p>Repairing a phone is cheaper than buying a new one, especially if the damage is minor. However, it’s worth spending on a new phone in case of severe damage. The decision to repair the device also depends on factors like the phone’s age and repair costs, especially in your area. Here, we’ll break down the pros and cons of repairing a phone vs. getting a new phone to give you a better idea about both scenarios:</p>
 
 <ul>
@@ -228,7 +228,7 @@ return (
 <li>Buying a new phone is recommended in case of severe damage to the device, such as hardware issues. The new phone comes with the latest features and updates to fix any software issue you previously faced.</li>
 </ul> 
 
-<h2 id='head_0'>How do you know if your Phone is damaged?</h2>
+<h2 id='head'>How do you know if your Phone is damaged?</h2>
 <p>It’s not difficult to identify that your phone is damaged as it's based on physical and non-physical signs. Below are some of the aspects that show your phone may be damaged and needs immediate attention:</p>
 
 <ul>
@@ -238,7 +238,7 @@ return (
 <li>While overheating of the phone is normal, excessive overheating indicates that there is something wrong with your phone.</li>
 <li>Any other issue that is not normal may indicate that your device has been damaged, and you must take it to a repair shop in your area.</li>
 </ul>
-<h2 id='head_0_3'>Can you fix a Phone by yourself?</h2>
+<h2 id='head_3'>Can you fix a Phone by yourself?</h2>
 <p>Repairing a phone yourself is not difficult, especially when many DIY phone repair guides and tools are available online. However, one must have professional knowledge before performing DIY home repairs. Otherwise, it is recommended to take your device to a professional repair store in your area.</p>
 <p>Before deciding whether to repair your phone yourself or take it to a professional, it’s important to weigh the pros and cons of both:</p>
 
@@ -280,7 +280,7 @@ return (
 </tbody>
 </table>
 
-<h2 id='head_0_4'>Should you buy a new Phone or get it repaired?</h2>
+<h2 id='head_4'>Should you buy a new Phone or get it repaired?</h2>
 <p>The decision whether to buy a new phone or get the old one repaired depends on many factors, such as your budget, the nature of the damage (how serious it is), and your usage. Here are the pros and cons of both options to help you make the right decision:</p>
 
 <h3 id='children_4'>Getting your phone repaired</h3>
@@ -322,12 +322,12 @@ return (
 </tbody>
 </table> 
 
-<h2 id='head_0'>How to prepare your phone for repair?</h2>
+<h2 id='head'>How to prepare your phone for repair?</h2>
 <p>To prepare your phone for any kind of repair, make sure to back up all your data to cloud storage or any external device. Then, turn off the tracking services like “Find my iPhone”. You should also log out from all the accounts, especially Google and iCloud.
 <br />
 If possible, after backing up the data and other necessary information, reset your phone to factory settings to ensure every personal detail is cleared. Now, you can finally give your phone to a repair store in your area without any fear of privacy or security.</p>
 
-<h2 id='head_0_5'>What types of Phone repair services exist?</h2>
+<h2 id='head_5'>What types of Phone repair services exist?</h2>
 <p>Three types of repair services are offered: ‘mail-in service’, ‘local repair service’, and ‘come to you service’.</p> 
 
 <h3 id='children_5'>Mail-in service</h3>
@@ -372,7 +372,7 @@ If possible, after backing up the data and other necessary information, reset yo
 <li>‘Come to you’ repair service costs more than the ‘mail in service’ and ‘local repair service’.</li>
 <li>This type of service may not cover all the repairs. For severe phone damage, you may still have to visit a repair store.</li>
 </ul>
-<h2 id='head_0'>How to choose the right repair store for your Phone repair?</h2>
+<h2 id='head'>How to choose the right repair store for your Phone repair?</h2>
 <p>Choosing the right repair store for your phone can be challenging. Below are some of the factors that you can consider when choosing a repair store:</p>
 <ul>
 <li>Look for repair stores that have good customer standing. You can check this through their Google reviews.</li>
@@ -380,10 +380,10 @@ If possible, after backing up the data and other necessary information, reset yo
 <li>Compare prices of different repair stores and also check what each store is offering at that price.</li>
 <li>Ask about their repair warranty. A good repair store always offers its customers at least 90 days of minimum warranty after repair.</li>
 </ul> 
-<h2 id='head_0'>Who will be fixing your Phone?</h2>
+<h2 id='head'>Who will be fixing your Phone?</h2>
 <p>Simply Fixable is a reliable platform that works as a bridge linking customers to high-quality local repair shops that they have approved. They aim to make repair services affordable and easily available to everyone. Over the past ten years, more than 40,000 phones, tablets, computers, and game consoles have been repaired through their platform.</p>
 
-<h2 id='head_0'>Where else can you get your Phone fixed?</h2>
+<h2 id='head'>Where else can you get your Phone fixed?</h2>
 <p>When looking for repair options to fix your phone, especially your iPhone, you’ve two excellent choices: Apple and Simply Fixable. Apple's repair service ensures your phone is in the right hands. On the other hand, Simply Fixable is a trustworthy repair service provider. Their hundreds of partner repair stores across the United States are personally vetted by them.</p> 
 
 <p>Here are the average iPhone repair costs by<a>Apple</a>  and   <a>Simply Fixable</a> .</p>
@@ -423,17 +423,17 @@ If possible, after backing up the data and other necessary information, reset yo
 
 <h2>*Data in the given table is based on Simply Fixable's market research and the official Apple website</h2>
 
-<h2 id='head_0'>How are partner stores selected at Simply Fixable?</h2>
+<h2 id='head'>How are partner stores selected at Simply Fixable?</h2>
 <p>The partner stores are carefully selected based on some factors to ensure optimal customer satisfaction. Key considerations include the quality of the service provided, the time duration of repair service, the proficiency and training of their staff, and their aptitude for rapidly diagnosing device issues. Simply Fixable only partners with stores with years of industrial experience and must offer a minimum 90-day warranty.</p>
 
 <p>Additionally, they prioritize shops that demonstrate outstanding customer service with 90% minimum positive reviews from customers. The ease with which repair appointments can be scheduled, competitive pricing, and the ready availability of essential parts and tools for repairs further influence the selection process of Simply Fixable.</p>
 
 <p>There is also a guideline developed by Simply Fixable, which each store’s technicians must adhere to. The guideline includes the process of performing repairs professionally with the right tools. Every partnered store is required to have enough technical resources to meet demand and should only use advanced tools for any kind of repair to ensure the safety and durability of devices.</p> 
 
-<h2 id='head_0'>How are parts that are used during your repair sourced?</h2>
+<h2 id='head'>How are parts that are used during your repair sourced?</h2>
 <p>Simply Fixable only partners with stores that pass the quality control check. All the partner repair stores must provide parts that meet industry standards for each device they repair.</p>
 
-<h2 id='head_0'>Tips to keep your Phone running smoothly and avoid problems</h2>
+<h2 id='head'>Tips to keep your Phone running smoothly and avoid problems</h2>
 <p>Below are some of the tips you can follow to make your phone run smoothly without any issues:</p>
 
 <ul>
@@ -444,7 +444,7 @@ If possible, after backing up the data and other necessary information, reset yo
 <li>Clean your phone’s charging ports with a soft cloth to avoid dirt and debris.</li>
 <li>Always use official chargers and avoid charging your phone overnight.</li> 
 </ul>
-<h2 id='head_0'>Phone Troubleshooting Articles</h2>
+<h2 id='head'>Phone Troubleshooting Articles</h2>
 <p>iPhone Won't Turn On</p>
 
 <p>iPhone Won’t Charge</p>
@@ -517,7 +517,7 @@ If possible, after backing up the data and other necessary information, reset yo
 
  
 
-<h2 id='head_0'>Phone Repair Cost Guide</h2>
+<h2 id='head'>Phone Repair Cost Guide</h2>
 <p>Phone Screen Repair Cost</p>
 
 <p>iPhone Repair Cost in US</p>
@@ -540,7 +540,7 @@ If possible, after backing up the data and other necessary information, reset yo
 
  
 
-<h2 id='head_0'>Phone Repair Guide</h2>
+<h2 id='head'>Phone Repair Guide</h2>
 <p>How to Repair Phone Screen by Yourself?</p>
 
 <p>How to Replace iPhone Screen by Yourself?</p>
@@ -563,7 +563,7 @@ If possible, after backing up the data and other necessary information, reset yo
 
  
 
-<h2 id='head_0'>Phone News</h2>
+<h2 id='head'>Phone News</h2>
 <p>The Most Anticipated Phones to Launch in 2023</p>
 
 <p>Galaxy S23, iPhone 15 and More: Top Phones to Expect in 2023</p>
