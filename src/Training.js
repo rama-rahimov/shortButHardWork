@@ -57,9 +57,12 @@ return (
 (arr || []).map((el, index) => {
 return(
 <div style={{paddingTop:"5px"}} key={index}>
-<p onClick={() => scrollToSection(el.offsetTop)} style={{ cursor:"pointer", fontSize:"16px", color:"#fff"}}>
-{el.value} {el.key > 0 ? <span onClick={() => vperedFilter(el.key)} style={{color:"#fff", fontSize:"18px", fontWeight:"bold", paddingLeft:"5px"}}>+</span> : null} 
+<div className='head_and_0'>
+<p onClick={() => scrollToSection(el.offsetTop)} style={{ cursor:"pointer", fontSize:"16px", color:"#fff", marginRight:"5px"}}>
+{el.value} 
 </p>
+{el.key > 0 ? <span onClick={() => vperedFilter(el.key)} style={{color:"#fff", fontSize:"18px", fontWeight:"bold", cursor:"pointer" , marginRight:"5px"}}>+</span> : null} 
+</div>
 {
 dokontsa.length > 0 && dokontsa[0].key === el.key && dokontsa.map((el, index) => {
 return (
