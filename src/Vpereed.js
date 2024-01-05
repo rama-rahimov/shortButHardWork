@@ -26,8 +26,6 @@ const tadam = childrenArr.filter((el) => el.key === key);
 setDokontsa(tadam);
 }
 
-
-  
 setTimeout(() => {
 setArr2("Hello")  
 }, 30);
