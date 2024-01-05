@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import './App.css';
 
 const Vpereed = () => {
-const [take, setTake] = useState();
+const [take, setTake] = useState("");
 const ref = useRef();
 const [arr, setArr] = useState([]);
 const [arr2, setArr2] = useState("");
@@ -28,7 +28,7 @@ setDokontsa(tadam);
 
 setTimeout(() => {
 setArr2("Hello")  
-}, 30);
+}, 80);
 
 useEffect(() => {
 const rabota = async () => {
@@ -37,7 +37,7 @@ setTake(ahaa.data[0].text);
 });
 }
 const takee = ref.current.children[1].childNodes[0].children; 
-if(!(arr.length > 0)){     
+if(!(arr.length > 0)){    
 for (let iterator of takee) {    
 if(iterator.id.includes("children")) {
 let childrenKey = iterator.id.split("_")[1];
