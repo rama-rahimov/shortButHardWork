@@ -28,7 +28,7 @@ setDokontsa(tadam);
 
 setTimeout(() => {
 setArr2("Hello")  
-}, 80);
+}, 100);
 
 useEffect(() => {
 const rabota = async () => {
