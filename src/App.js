@@ -4,10 +4,10 @@ function App() {
 const [teqText , setTeqText] = useState([]);
 const [arrTeq] = useState(`<h1>ljnlknk</h1>   <p>hjjhvvjk</p>
 
-<h1>kjv kjfdnd</h1>    <p>kjnvfdkjn</p>
+<h1>kjv kjfdnd</h1>    <p>kjbdjnlksnfvskjdnv</p>
 
 
-<h1>kjfdns ldndfs</h1>    <p>jnfdskf</p>`);
+<h1>kjfdns ldndfs</h1>    <p>jkjdvfnlkdnvf</p>`);
 useEffect(() => {
 const takeOnlyH1 = (arrTeg) => {
 console.log(arrTeg);
